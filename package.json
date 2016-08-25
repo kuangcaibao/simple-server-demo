@@ -1,0 +1,50 @@
+{
+  "name": "example-code",
+  "version": "1.0.0",
+  "description": "a origin code, each pro will need",
+  "main": "server.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "debug": "supervisor --debug-brk server.js",
+    "dev": "supervisor server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/kuangcaibao/example-code.git"
+  },
+  "keywords": [
+    "example"
+  ],
+  "author": "kuangcaibao",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "eventproxy": "^0.3.5",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "morgan": "^1.7.0",
+    "multer": "^1.2.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-redis": "^3.1.0",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.1",
+    "ejs-mate": "^2.3.0",
+    "express-session": "^1.14.0",
+    "loader": "^2.1.1",
+    "lodash": "^4.15.0",
+    "mongoose": "^4.5.9",
+    "redis": "^2.6.2"
+  }
+}

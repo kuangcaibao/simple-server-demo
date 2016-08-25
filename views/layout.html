@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% if(typeof title !== "undefined") { %>
+	<title><%= title %></title>
+	<% } %>
+	<meta charset="utf-8" />
+	<meta name="description" content="<%= config.description %>" />
+	<meta name="viewport" content="width-device-width, initial-scale=1" />
+
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<script type="text/javascript" src="/static/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<%- partial("./nav") %>
+
+<%- body %>
+
+<%- partial("./footer") %>
+
+</body>
+</html>
