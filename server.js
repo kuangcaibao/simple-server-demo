@@ -21,6 +21,13 @@ var router = require("./routes");
 var api = require("./routes/api");
 var auth = require("./middleware/auth");
 
+// 这里设置可以跨域访问
+app.all("*", function(req, res, next) {
+	// res.header("Access-Control-Allow-Origin", "*");
+	// res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+	next();
+})
+
 // 静态文件路径
 app.use("/static", express.static("public"));
 
@@ -47,7 +54,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // 路由设置
 app.use("/", router);
-app.use("/api", auth,  api);
+// app.use("/api", auth,  api);
+app.use("/api",  api);
 
 app.listen(config.port, function(error) {
   if (error) {

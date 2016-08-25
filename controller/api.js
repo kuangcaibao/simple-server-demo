@@ -4,5 +4,7 @@ exports.getList = function(req, res, next) {
 
 	// next();
 
-	res.json([]);
+	// console.log("here");
+
+	res.json([{hello: "world"}]);
 }
