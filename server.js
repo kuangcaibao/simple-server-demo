@@ -23,8 +23,10 @@ var auth = require("./middleware/auth");
 
 // 这里设置可以跨域访问
 app.all("*", function(req, res, next) {
-	// res.header("Access-Control-Allow-Origin", "*");
-	// res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+	res.header('Access-Control-Allow-Origin', 'http://192.168.0.53:4000');
+	res.header('Access-Control-Allow-Credentials', true);
+  	res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+  	res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
 	next();
 })
 
