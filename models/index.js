@@ -1,6 +1,10 @@
 require("./conndb");
 var User = require("./user");
 var Task = require("./task");
+var info = require("./info");
 
-exports.User = User;
-exports.Task = Task;
+module.exports = {
+	User,
+	Task,
+	info
+}

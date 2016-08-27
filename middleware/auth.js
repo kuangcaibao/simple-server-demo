@@ -1,12 +1,10 @@
+var { info } = require("../models");
+
 module.exports = function(req, res, next) {
 
-	if(!req.session) {
-		res.redirect("/nomatch");
-	}
-
-	// 用户未登录
-	if(!req.session.name) {
-		res.redirect("/login");
+	// cookie中没有sessionid，或者是 sessionid 对应的user在 redis 中没有
+	if(!req.session || !req.session.user) {
+		res.json(info.noLogin);
 	}
 
 	next();

@@ -3,7 +3,8 @@ var mongoose = require("mongoose");
 var userSchema = mongoose.Schema({
 	name: String,
 	pwd: String,
-	signtime: Date
+	signtime: Date,
+	logintime: Date
 });
 
 var User = mongoose.model("User", userSchema);
