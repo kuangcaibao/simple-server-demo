@@ -18,12 +18,14 @@ var config = require("./config");
 var client = redis.createClient();
 
 // var router = require("./routes");
+var user = require("./routes/user");
 var api = require("./routes/api");
 var auth = require("./middleware/auth");
 
 // 这里设置可以跨域访问
 app.all("*", function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', 'http://192.168.0.53:4000');
+	// res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Credentials', true);
   	res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
   	res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
@@ -42,6 +44,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // 路由设置
+app.use("/", user);
 app.use("/api", auth,  api);
 
 app.listen(config.port, function(error) {

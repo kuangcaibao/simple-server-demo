@@ -1,23 +1,25 @@
 var { User } = require("../models");
 
+// Promise
 // 用户的增删改查
-exports.userQuery = function(conditions) {
+exports.Query = function(conditions) {
 
 	return User.find(conditions);
 
 }
 
-exports.userSave = function(query) {
+exports.Save = function(query) {
 	var user = new User();
 	user.signuptime = new Date();
 	Object.assign(user, query);
 	return user.save();
 }
 
-exports.userUpdate = function(conditions, doc) {
+exports.Update = function(conditions, doc) {
 	return User.update(conditions, doc);
 }
 
+// callback
 // 通过用户名和密码查询用户，登录使用
 exports.getUserByNameAndPwd = function(query, callback) {
 
